@@ -1,0 +1,15 @@
+{
+  "name": "tasty-pizza",
+  "version": "0.1.0",
+  "description": "Pilot pizza delivery web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pizza",
+    "delivery"
+  ],
+  "author": "Anton Lytkin <anton@lytkin.me>",
+  "license": "ISC"
+}
