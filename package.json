@@ -15,9 +15,15 @@
   "author": "Anton Lytkin <anton@lytkin.me>",
   "license": "ISC",
   "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
     "next": "^9.4.4",
+    "next-react-svg": "^1.1.1",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-materialize": "^3.9.2",
+    "sass": "^1.26.8"
   },
   "devDependencies": {
     "eslint": "^7.2.0",
