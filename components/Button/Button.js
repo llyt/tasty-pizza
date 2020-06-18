@@ -18,6 +18,6 @@ export default Button
 Button.propTypes = {
   type: PropTypes.string,
   children: PropTypes.string.isRequired,
-  action: PropTypes.func.isRequired,
+  action: PropTypes.func,
   solid: PropTypes.bool
 }

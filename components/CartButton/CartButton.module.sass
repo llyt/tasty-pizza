@@ -1,0 +1,40 @@
+@import 'assets/styles/variables'
+
+.CartButton
+  display: flex
+  justify-content: flex-end
+  flex: 0 0 70px
+
+.Button
+  cursor: pointer
+  display: flex
+  position: relative
+  span
+    position: absolute
+    left: 8px
+    background: #FFFFFF
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #808080
+    border-radius: 50%
+    width: 15px
+    height: 15px
+    font-size: 11px
+
+  .Icon
+    width: 32px
+
+@media (max-width: $width-large)
+  .CartButton
+    flex: 0 0 70px
+    span
+      width: 16px
+      height: 16px
+      font-size: 11px
+  .Icon
+    width: 26px
+
+@media (max-width: $width-small)
+  .CartButton
+    flex: 0 0 55px
