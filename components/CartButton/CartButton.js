@@ -5,7 +5,7 @@ import Link from 'next/link'
 const CartButton = () => {
   return (
     <div className={styles.CartButton}>
-      <Link href="/order/checkout">
+      <Link href="/cart">
         <a className={styles.Button}>
           <CartIcon className={styles.Icon} />
           <span>2</span>
