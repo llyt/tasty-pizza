@@ -1,40 +1,36 @@
-@import 'assets/styles/variables'
-
 .Cart
-  display: flex
-  justify-content: flex-end
-  flex: 0 0 70px
+  width: 60%
+  margin: 0 auto
+  padding: 40px 0 60px
+  min-height: 100vh
 
-.Button
-  cursor: pointer
+.Title
+  font-weight: 500
+
+.List
+  list-style-type: none
+  border-top: 1px solid #d8d8d8
+  padding: 0
+  margin: 40px 0 0
+
+.Total
   display: flex
-  position: relative
+  flex-direction: column
+  align-items: flex-end
+  justify-content: center
+  padding: 40px 0
+  p
+    margin: 0
+    padding: 8px 0
+
+.Summ
+  font-size: 22px
   span
-    position: absolute
-    left: 8px
-    background: #FFFFFF
-    display: flex
-    justify-content: center
-    align-items: center
-    border: 1px solid #808080
-    border-radius: 50%
-    width: 15px
-    height: 15px
-    font-size: 11px
+    font-size: 24px
+    margin-left: 8px
+    font-weight: 500
 
-  .Icon
-    width: 32px
 
-@media (max-width: $width-large)
-  .Cart
-    flex: 0 0 70px
-    span
-      width: 16px
-      height: 16px
-      font-size: 11px
-  .Icon
-    width: 26px
-
-@media (max-width: $width-small)
-  .Cart
-    flex: 0 0 55px
+.Bottom
+  display: flex
+  justify-content: space-between
