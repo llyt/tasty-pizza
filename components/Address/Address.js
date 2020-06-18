@@ -26,7 +26,11 @@ const Address = () => {
                 <Button>To Cart</Button>
               </a>
             </Link>
-            <Button solid>Confirm</Button>
+            <Link href='/checkout' passHref>
+              <a>
+                <Button solid>Checkout</Button>
+              </a>
+            </Link>
           </div>
         </form>
       </div>
