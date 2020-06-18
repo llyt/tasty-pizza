@@ -8,7 +8,7 @@ const Cart = () => {
     <section>
       <div className='container'>
         <div className={styles.Cart}>
-          <h1 className={styles.Title}>Cart</h1>
+          <h1>Cart</h1>
           <ul className={styles.List}>
             <CartItem />
             <CartItem />
@@ -25,7 +25,7 @@ const Cart = () => {
                 <Button>To menu</Button>
               </a>
             </Link>
-            <Link href='/order/address'>
+            <Link href='/address'>
               <a>
                 <Button solid>Continue</Button>
               </a>

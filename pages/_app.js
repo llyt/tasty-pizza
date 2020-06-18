@@ -1,6 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
 import('normalize.css')
+import('../assets/styles/global.sass')
 
 class MyApp extends App {
   render () {
