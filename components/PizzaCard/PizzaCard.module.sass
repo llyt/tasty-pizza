@@ -1,3 +1,5 @@
+@import "assets/styles/variables"
+
 .PizzaCard
   position: relative
   display: flex
@@ -34,3 +36,39 @@
     color: #666666
     font-size: 12px
     font-weight: normal
+
+.Specifier
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-radius: 20px
+  height: 37px
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .2)
+  span
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid $primary-color
+    height: 35px
+    width: 40px
+
+.Decrease, .Increase
+  font-size: 20px
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $primary-color
+  border: none
+  color: #FFFFFF
+  height: 37px
+  width: 40px
+
+.Decrease
+  border-radius: 20px 0 0 20px
+
+.Increase
+  border-radius: 0 20px 20px 0
+
+
+

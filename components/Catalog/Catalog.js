@@ -6,9 +6,10 @@ const Catalog = () => {
   return (
     <section className='container'>
       <div className={styles.Catalog}>
-        {pizzas.map(({ image, title, description, startPrice }, index) => (
+        {pizzas.map(({ id, image, title, description, startPrice }, index) => (
           <PizzaCard
             key={title + index}
+            id={`${id}`}
             image={image}
             title={title}
             description={description}
