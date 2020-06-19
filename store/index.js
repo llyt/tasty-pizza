@@ -6,6 +6,7 @@ import rootReducer from './rootReducer'
 let store
 
 export const initialState = {
+  catalog: [],
   cart: {}
 }
 

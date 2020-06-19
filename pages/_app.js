@@ -5,7 +5,6 @@ import Head from 'next/head'
 import('normalize.css')
 import('../assets/styles/global.sass')
 
-// eslint-disable-next-line react/prop-types
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState)
 
@@ -50,6 +49,7 @@ const MyApp = ({ Component, pageProps }) => {
 export default MyApp
 
 MyApp.propTypes = {
+  Component: PropTypes.elementType,
   pageProps: PropTypes.shape({
     initialReduxState: PropTypes.object
   })

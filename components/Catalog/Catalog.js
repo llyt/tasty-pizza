@@ -1,8 +1,9 @@
 import styles from './Catalog.module.sass'
 import PizzaCard from '../PizzaCard/PizzaCard'
-import pizzas from '../../mocs/Pizzas'
+import { useSelector } from 'react-redux'
 
 const Catalog = () => {
+  const pizzas = useSelector((state) => state.catalog)
   return (
     <section className='container'>
       <div className={styles.Catalog}>
