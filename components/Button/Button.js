@@ -1,11 +1,10 @@
 import styles from './Button.module.sass'
 import PropTypes from 'prop-types'
 
-const Button = ({ data, type, action, solid, children }) => {
+const Button = ({ type, action, solid, children }) => {
   const solidClass = solid ? styles.orange : ''
   return (
     <button
-      data-tag={data}
       type={type || 'button'}
       onClick={action}
       className={[styles.Button, solidClass].join(' ')}

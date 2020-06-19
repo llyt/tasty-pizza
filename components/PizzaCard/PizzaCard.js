@@ -9,14 +9,12 @@ const PizzaCard = ({ id, image, title, description, startPrice }) => {
   const dispatch = useDispatch()
   const count = useSelector((state) => state.cart[id])
 
-  function addToCart (event) {
-    const targetId = event.target.dataset.tag
-    dispatch(actions.addToCart(targetId))
+  function addToCart () {
+    dispatch(actions.addToCart(id))
   }
 
-  function removeFromCart (event) {
-    const targetId = event.target.dataset.tag
-    dispatch(actions.removeFromCart(targetId))
+  function removeFromCart () {
+    dispatch(actions.removeFromCart(id))
   }
 
   return (
@@ -35,7 +33,6 @@ const PizzaCard = ({ id, image, title, description, startPrice }) => {
           {!count
             ? (
               <Button
-                data={id}
                 action={addToCart}
                 solid
               >
@@ -45,7 +42,6 @@ const PizzaCard = ({ id, image, title, description, startPrice }) => {
             : (
               <div className={styles.Specifier}>
                 <button
-                  data-tag={id}
                   className={styles.Decrease}
                   type='button'
                   onClick={removeFromCart}
@@ -54,7 +50,6 @@ const PizzaCard = ({ id, image, title, description, startPrice }) => {
                 </button>
                 <span>{count}</span>
                 <button
-                  data-tag={id}
                   className={styles.Increase}
                   type='button'
                   onClick={addToCart}
