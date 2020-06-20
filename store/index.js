@@ -2,15 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { createWrapper } from 'next-redux-wrapper'
 import catalogReducer from './catalog'
 import cartReducer from './cart'
-
-export const initialState = {
-  catalog: [],
-  cart: {
-    added: null,
-    totalCount: null,
-    totalAmount: null
-  }
-}
+import userReducer from './user'
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -22,7 +14,8 @@ const bindMiddleware = (middleware) => {
 
 const createRootReducer = () => combineReducers({
   catalog: catalogReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  user: userReducer
 })
 
 function initStore (preloadedState) {

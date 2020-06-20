@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 import Cart from '../components/Cart/Cart'
 import Footer from '../components/Footer/Footer'
 import { useSelector } from 'react-redux'
-import EmptyCart from '../components/EmptyCart/EmtpyCart'
+import EmptyCart from '../components/EmptyCart/EmptyCart'
 
 const CartPage = () => {
   const { totalCount } = useSelector(state => state.cart)

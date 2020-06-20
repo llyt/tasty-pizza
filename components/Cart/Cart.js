@@ -33,7 +33,7 @@ const Cart = () => {
                 <Button>To menu</Button>
               </a>
             </Link>
-            <Link href='/address'>
+            <Link href='/checkout'>
               <a>
                 <Button solid>Continue</Button>
               </a>
