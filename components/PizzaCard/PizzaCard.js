@@ -3,18 +3,20 @@ import Image from '../Image/Image'
 import Button from '../Button/Button'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
-import * as actions from '../../store/actions'
+import { cartActions } from '../../store/cart'
 
 const PizzaCard = ({ id, image, title, description, startPrice }) => {
   const dispatch = useDispatch()
-  const count = useSelector((state) => state.cart[id])
+  const count = useSelector((state) => state.cart.added[id]
+    ? state.cart.added[id].count
+    : 0)
 
   function addToCart () {
-    dispatch(actions.addToCart(id))
+    dispatch(cartActions.addToCart(id, startPrice))
   }
 
   function removeFromCart () {
-    dispatch(actions.removeFromCart(id))
+    dispatch(cartActions.removeFromCart(id))
   }
 
   return (

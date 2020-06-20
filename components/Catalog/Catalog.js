@@ -3,7 +3,7 @@ import PizzaCard from '../PizzaCard/PizzaCard'
 import { useSelector } from 'react-redux'
 
 const Catalog = () => {
-  const pizzas = useSelector((state) => state.catalog)
+  const pizzas = useSelector((state) => state.catalog.all)
   return (
     <section className='container'>
       <div className={styles.Catalog}>

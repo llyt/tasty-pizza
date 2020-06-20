@@ -3,11 +3,7 @@ import styles from './CartButton.module.sass'
 import Link from 'next/link'
 
 const CartButton = () => {
-  const count = useSelector((state) => {
-    return Object.keys(state.cart).reduce((acc, key) => {
-      return acc + state.cart[key]
-    }, 0)
-  })
+  const count = useSelector((state) => state.cart.totalCount) || 0
 
   return (
     <div className={styles.CartButton}>

@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types'
-import { Provider } from 'react-redux'
-import { useStore } from '../store'
+import { wrapper } from '../store'
 import Head from 'next/head'
 import('normalize.css')
 import('../assets/styles/global.sass')
 
 const MyApp = ({ Component, pageProps }) => {
-  const store = useStore(pageProps.initialReduxState)
-
   return (
     <>
       <Head>
@@ -39,14 +36,12 @@ const MyApp = ({ Component, pageProps }) => {
           }
         `}
       </style>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
+      <Component {...pageProps} />
     </>
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
 
 MyApp.propTypes = {
   Component: PropTypes.elementType,
