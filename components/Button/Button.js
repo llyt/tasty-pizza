@@ -16,6 +16,7 @@ const Button = ({ type, action, solid, children }) => {
 export default Button
 
 Button.propTypes = {
+  data: PropTypes.string,
   type: PropTypes.string,
   children: PropTypes.string.isRequired,
   action: PropTypes.func,

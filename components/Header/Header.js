@@ -3,7 +3,6 @@ import Logo from '../Logo/Logo'
 import CartButton from '../CartButton/CartButton'
 import Clock from '../../public/static/images/svg/clock.svg'
 import Call from '../../public/static/images/svg/call.svg'
-import Login from '../../public/static/images/svg/login.svg'
 
 const Header = () => {
   return (
@@ -27,14 +26,6 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.Right}>
-            <button
-              className={styles.Login}
-              type='button'
-              onClick={() => {}}
-              title='Log In'
-            >
-              <Login />
-            </button>
             <CartButton />
           </div>
         </div>

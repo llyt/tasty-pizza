@@ -1,18 +1,29 @@
+@import "assets/styles/variables"
+
 .CartItem
   display: flex
-  align-items: center
   justify-content: space-between
   padding: 35px 5px
   border-bottom: 1px solid #d8d8d8
 
 .Main
+  max-width: 500px
   display: flex
+  align-items: center
+
+.Meta
+  margin-left: 30px
+  display: flex
+  max-width: 260px
+  flex: 1 0 30%
+  justify-content: space-between
   align-items: center
 
 .Image
   width: 70px
 
 .Body
+  max-width: 380px
   margin-left: 15px
   h2
     font-weight: 500
@@ -20,7 +31,8 @@
   p
     margin: 8px 0 0
     color: #666666
-    font-size: 14px
+    font-size: 12px
+    line-height: 1.4
 
 .Counter
   display: flex
@@ -41,11 +53,10 @@
     color: #CCCCCC
     transition: all .25s ease
     &:hover
-      color: #E35F00
-      border-color: #E35F00
+      color: $primary-color
+      border-color: $primary-color
     &:active
       transform: translateY(2px)
-
 
 .Delete
   margin: 0
@@ -56,3 +67,26 @@
 
 .DeleteIcon
   width: 18px
+
+
+@media (max-width: $width-small)
+  .CartItem
+    flex-direction: column
+    padding: 35px 0
+
+  .Title
+    font-size: 20px
+
+  .Meta
+    margin: 25px 0 0
+    max-width: 100%
+    padding: 0 20px
+
+  .Price
+    order: 1
+
+  .Counter
+    order: 2
+
+  .Delete
+    order: 3

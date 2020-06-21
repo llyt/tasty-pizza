@@ -18,12 +18,16 @@
     "materialize-css": "^1.0.0-rc.2",
     "next": "^9.4.4",
     "next-react-svg": "^1.1.1",
+    "next-redux-wrapper": "^6.0.2",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-input-mask": "^3.0.0-alpha.2",
     "react-materialize": "^3.9.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "sass": "^1.26.8"
   },
   "devDependencies": {

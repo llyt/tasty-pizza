@@ -1,21 +1,20 @@
-import App from 'next/app'
+import PropTypes from 'prop-types'
+import { wrapper } from '../store'
 import Head from 'next/head'
 import('normalize.css')
 import('../assets/styles/global.sass')
 
-class MyApp extends App {
-  render () {
-    const { Component, pageProps } = this.props
-    return (
-      <>
-        <Head>
-          <title>Tasty Pizza</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="shortcut icon" href="/static/images/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
-        </Head>
-        <style jsx global>
-          {`
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Head>
+        <title>Tasty Pizza</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no" />
+        <link rel="shortcut icon" href="/static/images/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
+      </Head>
+      <style jsx global>
+        {`
           a {
             text-decoration: none;
           }
@@ -36,11 +35,17 @@ class MyApp extends App {
             padding: 0 20px;
           }
         `}
-        </style>
-        <Component {...pageProps} />
-      </>
-    )
-  }
+      </style>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
+
+MyApp.propTypes = {
+  Component: PropTypes.elementType,
+  pageProps: PropTypes.shape({
+    initialReduxState: PropTypes.object
+  })
+}

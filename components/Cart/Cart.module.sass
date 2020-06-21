@@ -1,13 +1,11 @@
 @import "assets/styles/mixins"
+@import 'assets/styles/variables'
 
 .Cart
   @include inner60Center
 
-.List
-  list-style-type: none
-  border-top: 1px solid #d8d8d8
-  padding: 0
-  margin: 40px 0 0
+.Title
+  margin: 0
 
 .Total
   display: flex
@@ -30,3 +28,16 @@
 .Bottom
   display: flex
   justify-content: space-between
+
+
+@media (max-width: $width-extra-large)
+  .Cart
+    width: 75%
+
+@media (max-width: $width-large)
+  .Cart
+    width: 95%
+
+@media (max-width: $width-medium)
+  .Cart
+    width: 100%
