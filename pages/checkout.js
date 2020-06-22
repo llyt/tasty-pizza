@@ -13,6 +13,7 @@ const CheckoutPage = () => {
         <title>Checkout and order</title>
       </Head>
       <Header />
+      <Checkout />
       {totalCount ? <Checkout /> : <EmptyCart />}
       <Footer />
     </>

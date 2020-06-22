@@ -16,12 +16,17 @@ const Checkout = () => {
     phone = '',
     name = '',
     address = '',
-    comment = ''
+    comment = '',
+    isLoading
   } = useSelector((state) => state.user)
 
-  function handleContactInput (event) {
+  function handleContactInput(event) {
     const { name, value } = event.target
     dispatch(userActions.handleContactInput(name, value))
+  }
+
+  function sendOrder() {
+    dispatch(userActions.sendOrder())
   }
 
   return (
@@ -76,11 +81,11 @@ const Checkout = () => {
               <Button>To Cart</Button>
             </a>
           </Link>
-          <Link href='/order' passHref>
-            <a>
-              <Button solid>Order</Button>
-            </a>
-          </Link>
+          <Button
+            action={sendOrder}
+            disabled={isLoading}
+            solid
+          >Order</Button>
         </div>
       </div>
     </div>

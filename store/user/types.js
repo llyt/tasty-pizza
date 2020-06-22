@@ -1,1 +1,5 @@
 export const HANDLE_CONTACT_INPUT = 'HANDLE_CONTACT_INPUT'
+export const SEND_ORDER = 'SEND_ORDER'
+export const LOADER_ON = 'LOADER_ON'
+export const LOADER_OFF = 'LOADER_OFF'
+export const SET_RESPONSE = 'SET_RESPONSE'

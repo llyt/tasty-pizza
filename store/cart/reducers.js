@@ -1,5 +1,6 @@
 import { initialState } from './index'
 import * as types from './types'
+import * as userTypes from '../user/types'
 import { HYDRATE } from 'next-redux-wrapper'
 
 export default (state = initialState, action) => {
@@ -58,6 +59,11 @@ export default (state = initialState, action) => {
         },
         totalCount: state.totalCount - count,
         totalAmount: state.totalAmount - price
+      }
+
+    case userTypes.SET_RESPONSE:
+      return {
+        ...initialState
       }
     default:
       return state
