@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 function selectedItems (allItems, addedItems) {
   const itemsId = Object.keys(addedItems)
-  return allItems.filter(({ id }) => itemsId.includes(`${id}`))
+  return allItems.filter(({ _id }) => itemsId.includes(`${_id}`))
 }
 
 const Cart = () => {

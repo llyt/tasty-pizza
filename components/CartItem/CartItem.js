@@ -62,7 +62,7 @@ const CartItem = ({ id, image, title, description, startPrice, quantity }) => {
 export default CartItem
 
 CartItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired

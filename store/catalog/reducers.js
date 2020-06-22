@@ -9,9 +9,9 @@ export default (state = initialState, action) => {
         ...state, // use previous state
         ...action.payload.catalog // apply delta from hydration
       }
-    case types.INIT_PIZZAS_LIST:
+    case types.FETCH_PIZZA_LIST:
       return {
-        all: [...action.payload]
+        all: action.payload
       }
     default:
       return state
