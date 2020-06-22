@@ -4,7 +4,12 @@ import * as userActions from './actions'
 
 export const initialState = {
   isLoading: false,
-  response: null
+  response: null,
+  error: null,
+  phone: '',
+  name: '',
+  address: '',
+  comment: ''
 }
 
 export {

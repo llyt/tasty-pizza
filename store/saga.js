@@ -38,13 +38,13 @@ function* sendOrder() {
     yield put(userActions.setResponse(
       {
         status: 'OK',
-        id: response
+        orderId: response
       }
     ))
     yield put(userActions.loaderOff())
   } catch (e) {
     console.log(e)
-    yield put(userActions.setResponse(
+    yield put(userActions.setError(
       {
         status: 'ERROR',
         message: 'Error occurred. Please, check your data.'

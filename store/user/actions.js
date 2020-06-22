@@ -34,3 +34,10 @@ export const setResponse = (data) => (
     payload: data
   }
 )
+
+export const setError = (data) => (
+  {
+    type: types.SET_ERROR,
+    payload: data
+  }
+)

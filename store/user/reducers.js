@@ -29,8 +29,12 @@ export default (state = initialState, action) => {
     case types.SET_RESPONSE:
       return {
         ...state,
-        cart: initialState.cart,
         response: action.payload
+      }
+    case types.SET_ERROR:
+      return {
+        ...state,
+        error: action.payload
       }
 
     default:
