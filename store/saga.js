@@ -56,12 +56,12 @@ function* sendOrder() {
 }
 
 async function getPizzas() {
-  return await axios.get('http://192.168.1.3:5000/goods')
+  return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/goods`)
 }
 
 async function sendUserOrder(data) {
   const { phone, name, goods, date, address } = data
-  const res = await axios.post('http://192.168.1.3:5000/orders', {
+  const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
     phone,
     name,
     goods,

@@ -8,6 +8,8 @@
 .DS_Store
 .env
 .env.build
+.env.local
+.env.production
 
 # Dependency directories
 node_modules/
