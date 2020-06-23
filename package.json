@@ -1,7 +1,7 @@
 {
   "name": "tasty-pizza",
   "version": "0.1.0",
-  "description": "Pilot pizza delivery web app",
+  "description": "Test pizza delivery web app",
   "main": "index.js",
   "scripts": {
     "dev": "next",
