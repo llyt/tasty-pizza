@@ -11,7 +11,8 @@ export default (state = initialState, action) => {
     case types.HANDLE_CONTACT_INPUT:
       return {
         ...state,
-        [action.payload.name]: action.payload.value
+        [action.payload.name]: action.payload.value,
+        error: initialState.error
       }
 
     case types.LOADER_ON:

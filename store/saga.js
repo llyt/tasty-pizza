@@ -48,7 +48,7 @@ function* sendOrder() {
     yield put(userActions.setError(
       {
         status: 'ERROR',
-        message: 'Error occurred. Please, check your data.'
+        message: 'Error occurred. Please, check your input data.'
       }
     ))
     yield put(userActions.loaderOff())
