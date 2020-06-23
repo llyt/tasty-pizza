@@ -41,3 +41,16 @@ export const setError = (data) => (
     payload: data
   }
 )
+
+export const loadOrdersHistory = () => (
+  {
+    type: types.LOAD_ORDERS_HISTORY
+  }
+)
+
+export const setOrdersHistory = (data) => (
+  {
+    type: types.SET_ORDERS_HISTORY,
+    payload: data
+  }
+)

@@ -11,6 +11,7 @@ import axios from 'axios'
 export default function* rootSaga() {
   yield takeEvery(catalogTypes.LOAD_PIZZA_LIST, fetchPizzas)
   yield takeEvery(userTypes.SEND_ORDER, sendOrder)
+  yield takeEvery(userTypes.LOAD_ORDERS_HISTORY, fetchHistory)
 }
 
 function* fetchPizzas() {
@@ -19,7 +20,7 @@ function* fetchPizzas() {
     const data = yield res.data
     yield put(catalogActions.fetchPizzaList(data))
   } catch (e) {
-    yield console.log(e) // need to put in redux store
+    yield console.log(e)
   }
 }
 
@@ -30,7 +31,7 @@ function* sendOrder() {
     const added = yield select(getAddedItemsFromCart)
     const normalizedCart = yield call(normalizeCartItems, added)
     const order = {
-      phone,
+      phone: normalizePhone(phone),
       name,
       goods: normalizedCart,
       address,
@@ -57,6 +58,25 @@ function* sendOrder() {
   }
 }
 
+function* fetchHistory() {
+  try {
+    yield put(userActions.loaderOn())
+    const { phone: userPhone } = yield select(getUserInfo)
+    const res = yield call(getHistory, userPhone)
+    const data = yield res.data
+    yield put(userActions.setOrdersHistory(data))
+    yield put(userActions.loaderOff())
+  } catch (e) {
+    yield put(userActions.setError(
+      {
+        status: 'ERROR',
+        message: 'Phone can\'t be empty'
+      }
+    ))
+    yield put(userActions.loaderOff())
+  }
+}
+
 async function getPizzas() {
   return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/goods`)
 }
@@ -73,6 +93,17 @@ async function sendUserOrder(data) {
   return await res.data
 }
 
+async function getHistory(phone) {
+  try {
+    if (phone) {
+      const normilizedPhone = normalizePhone(phone)
+      return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/orders?phone=${normilizedPhone}`)
+    }
+  } catch (e) {
+    throw new Error()
+  }
+}
+
 function normalizeCartItems(srcList) {
   const result = Object.keys(srcList)
     .reduce((acc, key) => {
@@ -86,4 +117,8 @@ function normalizeCartItems(srcList) {
       return acc
     }, [])
   return result
+}
+
+function normalizePhone(srcPhone) {
+  return srcPhone.replace(/[^\d]/g, '')
 }
