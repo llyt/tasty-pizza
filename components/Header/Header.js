@@ -6,7 +6,7 @@ import Call from '../../public/static/images/svg/call.svg'
 
 const Header = () => {
   return (
-    <header className={styles.Header}>
+    <header className={styles.Header} id='header'>
       <div className='container'>
         <div className={styles.Content}>
           <div className={styles.Left}>
