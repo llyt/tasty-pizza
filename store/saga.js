@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import { takeEvery, put, select, call } from 'redux-saga/effects'
 import * as catalogTypes from './catalog/types'
 import * as catalogActions from './catalog/actions'
@@ -36,6 +37,7 @@ function* sendOrder() {
       date: Date.now()
     }
     const response = yield call(sendUserOrder, order)
+    yield Router.push('/confirm')
     yield put(userActions.setResponse(
       {
         status: 'OK',

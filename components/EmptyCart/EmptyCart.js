@@ -1,5 +1,5 @@
-import styles from './EmptyCart.module.sass'
 import Link from 'next/link'
+import styles from './EmptyCart.module.sass'
 import Button from '../Button/Button'
 import Image from '../Image/Image'
 
