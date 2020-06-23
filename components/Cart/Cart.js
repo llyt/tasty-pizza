@@ -1,8 +1,9 @@
+import { useSelector } from 'react-redux'
 import styles from '../Cart/Cart.module.sass'
 import CartList from '../CartList/CartList'
 import Button from '../Button/Button'
 import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { getDollarPrice } from '../../assets/utils'
 
 function selectedItems (allItems, addedItems) {
   const itemsId = Object.keys(addedItems)
@@ -25,7 +26,13 @@ const Cart = () => {
           <div className={styles.Total}>
             <p>Pizza Items: {totalCount}</p>
             <p>Delivery: {deliveryCost} €</p>
-            <p className={styles.Summ}>Total: <span>{totalAmount + deliveryCost} €</span></p>
+            <div className={styles.Amount}>
+              Total:
+              <div className={styles.Currency}>
+                <span>{totalAmount + deliveryCost} €</span>
+                <span>/ {getDollarPrice(totalAmount + deliveryCost)} $</span>
+              </div>
+            </div>
           </div>
           <div className={styles.Bottom}>
             <Link href='/' passHref>
