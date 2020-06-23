@@ -6,6 +6,7 @@ export const initialState = {
   isLoading: false,
   response: {},
   error: null,
+  history: null,
   phone: '',
   name: '',
   address: '',

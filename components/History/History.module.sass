@@ -1,0 +1,19 @@
+@import "assets/styles/mixins"
+@import "assets/styles/variables"
+
+.History
+  @include inner
+
+.Form
+  padding: 5px 0
+  display: flex
+  flex-direction: column
+  max-width: 250px
+  input
+    margin: 0
+  button
+    margin-top: 20px
+
+@media (max-width: $width-small)
+  .Form
+    max-width: 100%

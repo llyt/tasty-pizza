@@ -1,0 +1,26 @@
+@import "assets/styles/variables"
+
+.List
+  display: flex
+  flex-wrap: wrap
+  list-style-type: none
+  padding: 20px 0 30px
+
+.Item
+  flex: 0 0 250px
+  font-size: 14px
+  padding: 10px 15px
+  border: 1px solid #CCCCCC
+  border-radius: 5px
+  margin: 0 10px
+  &:first-child
+    margin-left: 0
+  span
+    font-weight: 500
+    margin-right: 5px
+
+@media (max-width: $width-small)
+  .Item
+    flex: 0 0 100%
+    max-width: 100%
+    margin: 15px 0 0

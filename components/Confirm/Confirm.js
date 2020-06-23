@@ -14,6 +14,11 @@ const Confirm = () => {
               <h1>Order has been confirmed!</h1>
               <p>Your order № {response.orderId}</p>
               <p>Expect a call from the operator.</p>
+              <Link href='/history' passHref>
+                <a>
+                  <Button solid>Orders history</Button>
+                </a>
+              </Link>
             </>
           )
           : (

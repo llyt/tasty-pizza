@@ -3,11 +3,13 @@ import { initialState } from './index'
 import * as types from './types'
 
 export default (state = initialState, action) => {
+  let nextState
   switch (action.type) {
     case HYDRATE:
-      return {
+      nextState = {
         ...state
       }
+      return nextState
     case types.HANDLE_CONTACT_INPUT:
       return {
         ...state,
@@ -36,6 +38,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: action.payload
+      }
+
+    case types.SET_ORDERS_HISTORY:
+      return {
+        ...state,
+        history: action.payload
       }
 
     default:
