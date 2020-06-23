@@ -13,7 +13,7 @@ const CartPage = () => {
         <title>Cart – set up your order</title>
       </Head>
       <Header />
-      {totalCount ? <Cart /> : <EmptyCart />}
+      { totalCount ? <Cart /> : <EmptyCart /> }
       <Footer />
     </>
   )

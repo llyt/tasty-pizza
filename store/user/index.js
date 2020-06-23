@@ -3,10 +3,13 @@ import userReducer from './reducers'
 import * as userActions from './actions'
 
 export const initialState = {
-  name: null,
-  phone: null,
-  address: null,
-  comment: null
+  isLoading: false,
+  response: {},
+  error: null,
+  phone: '',
+  name: '',
+  address: '',
+  comment: ''
 }
 
 export {

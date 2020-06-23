@@ -1,8 +1,8 @@
-import styles from './Checkout.module.sass'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
+import styles from './Checkout.module.sass'
+import Button from '../Button/Button'
 import { userActions } from '../../store/user'
 
 const InputMask = dynamic(
@@ -16,12 +16,18 @@ const Checkout = () => {
     phone = '',
     name = '',
     address = '',
-    comment = ''
+    comment = '',
+    isLoading,
+    error
   } = useSelector((state) => state.user)
 
-  function handleContactInput (event) {
+  function handleContactInput(event) {
     const { name, value } = event.target
     dispatch(userActions.handleContactInput(name, value))
+  }
+
+  function sendOrder() {
+    dispatch(userActions.sendOrder())
   }
 
   return (
@@ -70,17 +76,20 @@ const Checkout = () => {
             name='comment'
           />
         </div>
+        { error && (
+          <p className={styles.Error}>{`* ${error.message}`}</p>
+        )}
         <div className={styles.Bottom}>
           <Link href='/cart' passHref>
             <a>
               <Button>To Cart</Button>
             </a>
           </Link>
-          <Link href='/order' passHref>
-            <a>
-              <Button solid>Order</Button>
-            </a>
-          </Link>
+          <Button
+            action={sendOrder}
+            disabled={isLoading}
+            solid
+          >Order</Button>
         </div>
       </div>
     </div>
