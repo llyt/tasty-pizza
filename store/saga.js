@@ -5,6 +5,7 @@ import * as userTypes from './user/types'
 import * as userActions from './user/actions'
 import { getUserInfo } from './user/selectors'
 import { getAddedItemsFromCart } from './cart/selectors'
+import axios from 'axios'
 
 export default function* rootSaga() {
   yield takeEvery(catalogTypes.LOAD_PIZZA_LIST, fetchPizzas)
@@ -13,8 +14,8 @@ export default function* rootSaga() {
 
 function* fetchPizzas() {
   try {
-    const res = yield fetch('http://localhost:5000/goods')
-    const data = yield res.json()
+    const res = yield call(getPizzas)
+    const data = yield res.data
     yield put(catalogActions.fetchPizzaList(data))
   } catch (e) {
     yield console.log(e) // need to put in redux store
@@ -54,15 +55,20 @@ function* sendOrder() {
   }
 }
 
+async function getPizzas() {
+  return await axios.get('http://192.168.1.3:5000/goods')
+}
+
 async function sendUserOrder(data) {
-  const res = await fetch('http://localhost:5000/orders', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-    body: JSON.stringify(data)
+  const { phone, name, goods, date, address } = data
+  const res = await axios.post('http://192.168.1.3:5000/orders', {
+    phone,
+    name,
+    goods,
+    date,
+    address
   })
-  return await res.json()
+  return await res.data
 }
 
 function normalizeCartItems(srcList) {
