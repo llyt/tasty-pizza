@@ -1,6 +1,6 @@
 export default [
   {
-    id: 1,
+    _id: 1,
     image: {
       src: 'cheese.jpg',
       alt: 'Cheese Pizza'
@@ -10,7 +10,7 @@ export default [
     startPrice: 4
   },
   {
-    id: 2,
+    _id: 2,
     image: {
       src: 'cheese-with-ham.jpg',
       alt: 'Cheese with ham Pizza'
@@ -20,7 +20,7 @@ export default [
     startPrice: 4
   },
   {
-    id: 3,
+    _id: 3,
     image: {
       src: 'pepperoni.jpg',
       alt: 'Pepperoni Pizza'
@@ -30,7 +30,7 @@ export default [
     startPrice: 5
   },
   {
-    id: 4,
+    _id: 4,
     image: {
       src: 'hawaiian.jpg',
       alt: 'Hawaiian Pizza'
@@ -40,7 +40,7 @@ export default [
     startPrice: 6
   },
   {
-    id: 5,
+    _id: 5,
     image: {
       src: 'cheesy-chicken.jpg',
       alt: 'Cheesy Chicken Pizza'
@@ -50,7 +50,7 @@ export default [
     startPrice: 3
   },
   {
-    id: 6,
+    _id: 6,
     image: {
       src: 'hum-and-mushrooms.jpg',
       alt: 'Hum and Mushrooms Pizza'
@@ -60,7 +60,7 @@ export default [
     startPrice: 5
   },
   {
-    id: 7,
+    _id: 7,
     image: {
       src: 'margherita.jpg',
       alt: 'Margherita Pizza'
@@ -70,7 +70,7 @@ export default [
     startPrice: 6
   },
   {
-    id: 8,
+    _id: 8,
     image: {
       src: 'quattro-cheese.jpg',
       alt: 'Quattro Cheese Pizza'
@@ -80,7 +80,7 @@ export default [
     startPrice: 7
   },
   {
-    id: 9,
+    _id: 9,
     image: {
       src: 'double-pepperoni.jpg',
       alt: 'Double Pepperoni Pizza'
@@ -90,7 +90,7 @@ export default [
     startPrice: 8
   },
   {
-    id: 10,
+    _id: 10,
     image: {
       src: 'super-meat.jpg',
       alt: 'Super Meat Pizza'
@@ -100,7 +100,7 @@ export default [
     startPrice: 10
   },
   {
-    id: 11,
+    _id: 11,
     image: {
       src: 'four-seasons.jpg',
       alt: 'Four Seasons Pizza'
