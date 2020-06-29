@@ -13,10 +13,16 @@ Clone project to local machine
 git clone git@github.com:llyt/tasty-pizza-api.git
 ```
 
+Install dependencies
+```
+npm install
+```
+
 Run a project in development mode
 ```
 npm run dev
 ```
+
 **or** build a project firstly
 ```
 npm run build
@@ -40,7 +46,9 @@ npm run start
 
 # Deploying
 
-I used a free cloud solution – [Vercel](https://vercel.com/)
+I used a free cloud solution – [Vercel](https://vercel.com/).
+
+For API connecting add `NEXT_PUBLIC_API_URL` environment variable ([details](https://nextjs.org/docs/api-reference/next.config.js/environment-variables))
 
 # Design and Pictures
 
