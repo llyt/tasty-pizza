@@ -78,7 +78,13 @@ function* fetchHistory() {
 }
 
 async function getPizzas() {
-  return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/goods`)
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/goods`)
+  }
+
+  return {
+    data: require('../mocks/Pizzas').default
+  }
 }
 
 async function sendUserOrder(data) {

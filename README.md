@@ -12,11 +12,6 @@ Clone project to local machine
 ```
 git clone git@github.com:llyt/tasty-pizza-api.git
 ```
-Add `.env.local` file to root folder
-```
-touch .env.local
-```
-Add to `.env.local` NEXT_PUBLIC_API_URL variable with backend URL. _First you need to deploy the [backend part](https://github.com/llyt/tasty-pizza-api)._ 
 
 Run a project in development mode
 ```
