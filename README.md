@@ -49,4 +49,4 @@ I used a free cloud solution – [Vercel](https://vercel.com/)
 
 # Design and Pictures
 
-For simplicity, I took the design and pictires of [Dodo Pizza](https://dodopizza.ru/) as a basis.
+For simplicity, I took the design and pictures of [Dodo Pizza](https://dodopizza.ru/) as a basis.
