@@ -15,7 +15,7 @@
   "author": "Anton Lytkin <anton@lytkin.me>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "next": "^9.4.4",
     "next-react-svg": "^1.1.1",
     "next-redux-wrapper": "^6.0.2",
